@@ -17,3 +17,8 @@ jobs:
         run: npm install
       - name: Run the tests
         run: npm test -- --coverage
+      # Etapa para enviar o relatório de cobertura para o Codecov
+      - name: Upload coverage reports to Codecov
+        uses: codecov/codecov-action@v3
+        env:
+          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
